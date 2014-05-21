@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>fbtest</title>
+    </head>
+    <body>
+        {% if user.id %}
+            {{ user.username }}
+            {{ user.first_name }}
+            {{ user.last_name }}
+            <a href="/main/logout/">logout</a>
+        {% else %}
+            <a href="{% url 'socialauth_begin' 'facebook' %}">facebook login</a>
+        {% endif %}
+    </body>
+</html>
